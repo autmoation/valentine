@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Valentine 💘</title>
+<title>Best Sister 💖</title>
 
 <style>
 body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(#ffd1e8, #ffe8f3);
+  background: linear-gradient(#dbe9ff, #f2f6ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +46,7 @@ button {
 }
 
 .yes {
-  background: #ff4f8b;
+  background: #4f7cff;
   color: white;
 }
 
@@ -61,7 +61,6 @@ button {
   color: #666;
 }
 
-/* Fake pages */
 .page {
   display: none;
 }
@@ -70,7 +69,6 @@ button {
   display: block;
 }
 
-/* Floating hearts */
 .heart {
   position: absolute;
   animation: float 6s linear infinite;
@@ -88,7 +86,6 @@ button {
   margin: 15px 0;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
-
 </style>
 </head>
 
@@ -98,36 +95,35 @@ button {
 
   <!-- PAGE 1 -->
   <div class="page active" id="page-question">
-    <div class="emoji">🐱💗</div>
-    <h2>Alan, will you be my Valentine?</h2>
+    <div class="emoji">👧💙</div>
+    <h2>Hey bro 😎</h2>
+    <p>Do you agree that you got the **best sister ever**?</p>
 
     <div class="buttons" id="btnContainer">
-      <button class="yes" id="yesBtn">Yes</button>
-      <button class="no" id="noBtn">No</button>
+      <button class="yes" id="yesBtn">Obviously 😌</button>
+      <button class="no" id="noBtn">Hmm…</button>
     </div>
 
-    <div class="note">"No" seems a bit shy 😈</div>
+    <div class="note">Careful… wrong answer 😈</div>
   </div>
 
   <!-- PAGE 2 - YES -->
   <div class="page" id="page-yes">
-    <div class="emoji">🎉💖</div>
-    <h2>YAYYYY!</h2>
-    <p>You got the best girl as your Valentine 😌💘</p>
-     <img src="valentine1.jpeg" class="photo" alt="Best girl">
+    <div class="emoji">🎉🏆</div>
+    <h2>Correct!</h2>
+    <p>You are officially blessed with the **best sister in the world** 💖</p>
+    <img src="valentine1.jpeg" class="photo" alt="Best sister">
   </div>
 
   <!-- PAGE 3 - NO -->
-  <!-- PAGE 3 - NO -->
-<div class="page" id="page-no">
-  <div class="emoji">😈💕</div>
-  <h2>No, baby 😏</h2>
-  <p>You can’t say no.</p>
-  <p>You’re trapped with me 💖</p>
-  <img src="valentine2.jpeg" class="photo" alt="Trapped baby">
-  <button onclick="goBack()">Try Again 😌</button>
-</div>
-
+  <div class="page" id="page-no">
+    <div class="emoji">😏💥</div>
+    <h2>Wrong answer 😌</h2>
+    <p>But don’t worry…</p>
+    <p>You still got the **best sister** anyway 💙</p>
+    <img src="valentine2.jpeg" class="photo" alt="Best sister anyway">
+    <button onclick="goBack()">Try Again 😄</button>
+  </div>
 
 </div>
 
@@ -137,12 +133,10 @@ function showPage(pageId) {
   document.getElementById(pageId).classList.add("active");
 }
 
-/* YES */
 document.getElementById("yesBtn").addEventListener("click", () => {
   showPage("page-yes");
 });
 
-/* NO button runs away */
 const noBtn = document.getElementById("noBtn");
 const container = document.getElementById("btnContainer");
 
@@ -164,20 +158,14 @@ noBtn.addEventListener("click", () => {
   showPage("page-no");
 });
 
-/* NO click */
-noBtn.addEventListener("click", () => {
-  showPage("page-no");
-});
-
 function goBack() {
   showPage("page-question");
 }
 
-/* Floating hearts */
 setInterval(() => {
   const heart = document.createElement("div");
   heart.className = "heart";
-  heart.innerHTML = "💗";
+  heart.innerHTML = "💙";
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = Math.random() * 20 + 10 + "px";
   document.body.appendChild(heart);
